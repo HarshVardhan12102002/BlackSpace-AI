@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.client
+    volumes:
+      - ./client:/usr/src/app
+    container_name: client
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    env_file:  
+      - .env  
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+    stdin_open: true
+    tty: true
+    
+  server:
+    build:
+      context: ./
+      dockerfile: Dockerfile.server
+    volumes:
+      - .:/app
+    container_name: server
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
