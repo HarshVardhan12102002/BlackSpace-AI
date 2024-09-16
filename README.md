@@ -23,7 +23,7 @@ blackspace.ai is designed to streamline the process of gathering customer data a
 Clone the repository:
 
    ```bash
-   git clone https://github.com/srikanta30/blackspace-ai.git
+   git clone https://github.com/HarshVardhan12102002/BlackSpace-AI.git
    ```
 
 Make sure you have a **python >=3.8,<3.12**:
